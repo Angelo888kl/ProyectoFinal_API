@@ -6,8 +6,8 @@ import { telefonos } from './telefonos.js';
  * @property {number} id_restaurante
  * @property {number} local
  * @property {string} nombre
- * @property {direcciones} direccion 
- * @property {telefonos} telefono
+ * @property {direcciones | number} direccion 
+ * @property {telefonos | number} telefono
 */
 
 /**
