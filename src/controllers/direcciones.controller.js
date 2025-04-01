@@ -4,7 +4,16 @@ import { queries } from "../configurations/index.js";
 //importe de clases
 import { direcciones } from "../models/dirrecciones.js";
 
-export const get_direccion = async (req, res) => {}
+export const get_direccion = async (req, res) => {
+    try {
+        const { direccion } = req.params;
+        let result = await executeQuery(queries.get_direccion, [direcciones]);
+        return res.status(200).send(JSON.stringify(result));
+    } catch (error) {
+        console.log(error);
+        return res.status(400).send("Error en consulta");
+    }
+}
 
 export const post_direccion = async (req, res) => {
     try {

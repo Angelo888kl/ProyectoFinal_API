@@ -12,7 +12,7 @@
  */
 export class direcciones {
     /**
-     * @param {Direccion} obj - 
+     * @param {Direccion} obj - tipo de objeto representativo de la tabla [direcciones].
      */
     constructor(obj) {
         if(obj) {
