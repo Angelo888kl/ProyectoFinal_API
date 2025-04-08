@@ -20,6 +20,7 @@ export default {
         database: process.env.SQL_DATABASE,
         waitForConnections: true,
         connectionLimit: 10,
-        queueLimit: 0 
+        queueLimit: 0,
+        charset: 'utf8mb4', // usa este charset si hay emojis o caracteres especiales
     }
 }

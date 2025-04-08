@@ -2,12 +2,16 @@ import express from 'express';
 import morgan from 'morgan';
 import routes from './routes/index.js';
 import { getConnection, port } from './configurations/index.js';
+import cors from 'cors';
+
 
 //USo de la instancia experess
 const app = express();
 
 //confi de puerto 
 app.set('port', port)
+
+app.use(cors()); // Habilita CORS para todas las rutas
 
 //Uso de las librerias 
 app.use(morgan("dev"));

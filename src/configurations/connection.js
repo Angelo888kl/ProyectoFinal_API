@@ -46,12 +46,16 @@ export async function executeQueryTR(connectionTR, query, params = []) {
     }
 }
 
-export async function closeConnection() {
+export async function closeConnection(connectionTR) {
+    let connection = null;
     try {
-        pool.end();
+        connection = connectionTR;
+        if(!connection) throw "Error en la conexion sql.";
+        await connection.end();
         console.log("Conexion Pool terminada");
     } catch (error) {
-        console.log(error);
+        console.log("Error al cerrar la conexion", error);
+        throw error;
     }
 }
 export const port = init.port;
